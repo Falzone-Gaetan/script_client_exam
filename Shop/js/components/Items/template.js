@@ -20,7 +20,7 @@ export default function (items) {
           <option value="5">5</option>
         </select>
       </div>
-      <div class="col">&euro;${items.sum}</div>
+      <div class="col" id="somme">&euro; <span></span></div>
       <div>
         <a href="#">
           <i class="destroy fa-solid fa-circle-xmark"></i>

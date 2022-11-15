@@ -27,11 +27,11 @@ export default function(data) {
         <hr />
         <div class="row">
           <div id="count-item" class="col" style="padding-left: 0"><strong></strong> ITEMS</div>
-          <div class="sum col text-right">&euro; <span></span></div>
+          <div class="col text-right" id="sum">&euro; <span></span></div>
         </div>
         <form action="#">
           <p>SHIPPING</p>
-          <select>
+          <select id="delivery">
             <option class="text-muted" value="0" disabled selected>
               Choose your delivery
             </option>
@@ -43,14 +43,14 @@ export default function(data) {
             </option>
           </select>
           <p>GIVE CODE [10% reduction]</p>
-          <input type="text" placeholder="Your code here " />
+          <input id="promo" type="text" placeholder="Your code here " />
         </form>
         <div
           class="row"
           style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0"
         >
           <div class="col">TOTAL PRICE</div>
-          <div class="col text-right">&euro; 175.50</div>
+          <div class="col text-right" id="price">&euro; <span></span></div>
         </div>
         <button class="btn">CHECKOUT</button>
       </div>

@@ -11,7 +11,7 @@ export default class Items {
       this.image = data.image;
       this.parent = parent;
       this.elt = null;
-      this.sum = Number(data.price*data.quantity);
+      
     
     }
 
@@ -22,25 +22,32 @@ export default class Items {
         
         this.elt = document.querySelector(elt + ' .product:last-of-type');
         this.activateElements();
+        
+        this.sum();
       }
 
       activateElements () { 
         this.elt.querySelector('select').onchange = () =>{
-            
-            this.quantity = this.elt.querySelector('select').value; 
+            this.quantity = this.elt.querySelector('select').value;
             this.parent.changeQuantity(this.id,this.quantity);
+            this.sum();
+    
         };
+        
         this.elt.querySelector('.destroy').onclick = () => {
           this.selfDestroy();
         };
       }
-    
+   
       selfDestroy () {
         this.elt.remove();
         this.parent.destroyItem(this.id);
       }
       
-
+      sum(){
+        const sums = Number(this.price*this.quantity);
+        this.elt.querySelector('#somme span').innerText = sums ;
+      }
    
 
 }
